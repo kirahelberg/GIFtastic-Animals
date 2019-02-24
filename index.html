@@ -12,26 +12,27 @@
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-
     <div class="container">
-    
-        <!-- New buttons go here -->
-        <div class="row" id="button-view"></div>
-    
-        <div class="row">
-            <div class="col-7"></div>
-        <form class="col-5" id="button-form">
+      <h1 class="col-12" id="title">GIF-tastic Animals!</h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <!--Buttons go here-->
+        <div class="col-2" id="button-view"></div>
+
+        <!--GIFs appear here-->
+        <div class="col-6" id="gifs-appear-here"></div>
+
+        <form class="col-4" id="button-form">
           <label for="animalButton-input">Add an animal</label>
-          <input type="text" id="animalButton-input"><br>
-    
+          <input type="text" id="animalButton-input" /><br />
           <!-- Submit button to add new animal -->
-          <input id="add-animal" type="submit" value="Add an animal">
+          <input id="add-animal" type="submit" value="Submit" />
         </form>
+      </div>
     </div>
 
-        <div id="gifs-appear-here"></div>
-
-        <!--Link to jQuery-->
+    <!--Link to jQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!--Link to javascript file-->

@@ -1,0 +1,31 @@
+body {
+  background: rgb(36, 36, 36);
+  color: white;
+}
+
+#title {
+  margin: 20px 0px 20px 0px;
+  text-align: center;
+}
+
+#button-view {
+  text-align: center;
+}
+
+#add-animal {
+  margin-top: 10px;
+  background: rgb(210, 142, 255);
+  color: black;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+}
+
+.animal {
+  margin: 10px;
+  background: rgb(110, 202, 255);
+  color: black;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+}

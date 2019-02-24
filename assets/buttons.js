@@ -45,17 +45,44 @@ $("button").on("click", function() {
     for (var i = 0; i < results.length; i++) {
       var gifDiv = $("<div>");
 
+      //Create variables for rating, still gif, moving gif
       var rating = results[i].rating;
+      var stillGif = results[i].images.fixed_height_still.url;
+      var movingGif = results[i].images.fixed_height.url;
 
       var rating = $("<p>").text("Rating: " + rating);
 
-      var animalImage = $("<img>");
-      animalImage.attr("src", results[i].images.fixed_height.url);
+      var animalGif = $("<img id='animalGif'>");
+      animalGif.attr("src", stillGif);
+      animalGif.attr("data-still", stillGif);
+      animalGif.attr("data-animate", movingGif);
+      animalGif.attr("state", "still-gif");
 
       gifDiv.prepend(rating);
-      gifDiv.prepend(animalImage);
+      gifDiv.prepend(animalGif);
 
       $("#gifs-appear-here").prepend(gifDiv);
+    }
+  });
+
+  //NOT WORKING - WHY?
+
+  //When user clicks GIF, it animates
+  //Click again to stop animation
+  $("#animalGif").on("click", function(event) {
+    // Create variable to check the current state of the GIF
+    var state = $(this).attr("state");
+
+    // If the state is still, then animate
+    if (state === "still-gif") {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("state", "moving-gif");
+    }
+
+    // if the state is moving, then change to still
+    else {
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("state", "still-gif");
     }
   });
 });
