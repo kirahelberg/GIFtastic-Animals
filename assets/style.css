@@ -29,3 +29,9 @@ body {
   border: none;
   border-radius: 5px;
 }
+
+.gifs {
+  float: left;
+  margin: 10px;
+  text-align: center;
+}

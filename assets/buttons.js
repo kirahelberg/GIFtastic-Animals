@@ -43,7 +43,7 @@ $("button").on("click", function() {
     var results = response.data;
 
     for (var i = 0; i < results.length; i++) {
-      var gifDiv = $("<div>");
+      var gifDiv = $("<div class='gifs'>");
 
       //Create variables for rating, still gif, moving gif
       var rating = results[i].rating;
@@ -55,7 +55,7 @@ $("button").on("click", function() {
       var animalGif = $("<img id='animalGif'>");
       animalGif.attr("src", stillGif);
       animalGif.attr("data-still", stillGif);
-      animalGif.attr("data-animate", movingGif);
+      animalGif.attr("data-moving", movingGif);
       animalGif.attr("state", "still-gif");
 
       gifDiv.prepend(rating);
@@ -65,17 +65,16 @@ $("button").on("click", function() {
     }
   });
 
-  //NOT WORKING - WHY?
-
   //When user clicks GIF, it animates
   //Click again to stop animation
-  $("#animalGif").on("click", function(event) {
+  $("#gifs-appear-here").on("click", "#animalGif", function(event) {
+    event.preventDefault();
     // Create variable to check the current state of the GIF
     var state = $(this).attr("state");
 
     // If the state is still, then animate
     if (state === "still-gif") {
-      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("src", $(this).attr("data-moving"));
       $(this).attr("state", "moving-gif");
     }
 
